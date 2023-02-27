@@ -86,8 +86,11 @@ killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager bspc
 xsettingsd --config="$BSPDIR"/xsettingsd &
 
 # polkit agent
+#if [[ ! `pidof xfce-polkit` ]]; then
+#	/usr/lib/xfce-polkit/xfce-polkit &
+#fi
 if [[ ! `pidof xfce-polkit` ]]; then
-	/usr/lib/xfce-polkit/xfce-polkit &
+	/usr/libexec/xfce-polkit &
 fi
 
 # Lauch keybindings daemon
@@ -96,6 +99,8 @@ sxhkd -c "$BSPDIR"/sxhkdrc &
 # Enable Super Keys For Menu
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
+ksuperkey -e 'Super_L=Super_L|d' &
+ksuperkey -e 'Super_R=Super_R|F1' &
 
 # Enable power management
 xfce4-power-manager &
