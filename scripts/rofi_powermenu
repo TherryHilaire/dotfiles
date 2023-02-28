@@ -85,11 +85,11 @@ run_cmd() {
 	elif [[ "$1" == '--opt3' ]]; then
 		confirm_run 'betterlockscreen --suspend'
 	elif [[ "$1" == '--opt4' ]]; then
-		confirm_run 'loginctl hibernate'
+		confirm_run 'systemctl hibernate'
 	elif [[ "$1" == '--opt5' ]]; then
-		bspasroot 'reboot'
+		comfirm_run 'systemctl reboot'
 	elif [[ "$1" == '--opt6' ]]; then
-		bspasroot 'poweroff'
+		confirm_run 'systemctl poweroff'
 	fi
 }
 

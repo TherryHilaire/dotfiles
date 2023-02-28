@@ -90,7 +90,7 @@ xsettingsd --config="$BSPDIR"/xsettingsd &
 #	/usr/lib/xfce-polkit/xfce-polkit &
 #fi
 if [[ ! `pidof xfce-polkit` ]]; then
-	/usr/libexec/xfce-polkit &
+	/usr/lib/xfce-polkit/xfce-polkit &
 fi
 
 # Lauch keybindings daemon
